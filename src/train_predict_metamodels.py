@@ -61,3 +61,4 @@ for name, metamodel in metamodels.items():
     metamodel.fit(X_train, y_metamodel_train)
     metas_predictions[name] = pd.DataFrame(metamodel.predict(X_test), index=X_test.index, columns=classifiers)
     metas_predictions[name].to_csv('../datasets/Univariate_ts/'+dataset+'/'+name+'_PREDICTION_TEST.csv', index=False)
+    metamodel.save('../metamodels/'+dataset+'/'+name)
