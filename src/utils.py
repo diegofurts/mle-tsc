@@ -93,7 +93,7 @@ def naive_ensemble(clfs_predictions):
 def get_metrics(y_true, y_pred):
 
     return pd.Series({'acc':accuracy_score(y_true, y_pred), 'balanced_acc':balanced_accuracy_score(y_true, y_pred),
-                      'f1':f1_score(y_true, y_pred), 'weighted_f1':f1_score(y_true, y_pred, average='weighted')})
+                      'f1':f1_score(y_true, y_pred, average=None), 'weighted_f1':f1_score(y_true, y_pred, average='weighted')})
 
 def get_blank_predictions(predictions):
 
